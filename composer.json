@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "TypiCMS\\Modules\\Dashboard\\": ""
+            "TypiCMS\\Modules\\Dashboard\\": "src/"
         }
     },
     "minimum-stability": "stable"

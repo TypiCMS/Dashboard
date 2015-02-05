@@ -1,3 +1,5 @@
+@extends('core::admin.master')
+
 @section('h1') @stop
 
 @section('main')

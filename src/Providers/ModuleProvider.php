@@ -24,8 +24,13 @@ class ModuleProvider extends ServiceProvider
 
         // Add dirs
         View::addLocation(__DIR__ . '/../Views');
-        Lang::addNamespace('dashboard', __DIR__ . '/../lang');
-        Config::addNamespace('dashboard', __DIR__ . '/../config');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'dashboard');
+        $this->publishes([
+            __DIR__ . '/../config/' => config_path('typicms/dashboard'),
+        ], 'config');
+        $this->publishes([
+            __DIR__ . '/../migrations/' => base_path('/database/migrations'),
+        ], 'migrations');
     }
 
     public function register()
@@ -47,10 +52,5 @@ class ModuleProvider extends ServiceProvider
 
             return new CacheDecorator($repository, $laravelCache);
         });
-
-        $app->before(function ($request, $response) {
-            require __DIR__ . '/../breadcrumbs.php';
-        });
-
     }
 }

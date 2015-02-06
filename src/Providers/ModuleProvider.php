@@ -1,18 +1,14 @@
 <?php
 namespace TypiCMS\Modules\Dashboard\Providers;
 
-use Lang;
-use View;
 use Config;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Application;
-
-// Repo
-use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
-
-// Cache
+use Illuminate\Support\ServiceProvider;
+use Lang;
 use TypiCMS\Modules\Dashboard\Repositories\CacheDecorator;
+use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
 use TypiCMS\Services\Cache\LaravelCache;
+use View;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -23,7 +19,7 @@ class ModuleProvider extends ServiceProvider
         require __DIR__ . '/../routes.php';
 
         // Add dirs
-        View::addLocation(__DIR__ . '/../Views');
+        View::addNamespace('dashboard', __DIR__ . '/../views/');
         $this->loadTranslationsFrom(__DIR__ . '/../lang', 'dashboard');
         $this->publishes([
             __DIR__ . '/../config/' => config_path('typicms/dashboard'),

@@ -21,7 +21,7 @@ class AdminController extends AdminSimpleController
      */
     public function index()
     {
-        return view('dashboard.admin.dashboard')
+        return view('dashboard::show')
             ->with('welcomeMessage', $this->repository->getWelcomeMessage());
     }
 }

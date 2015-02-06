@@ -20,7 +20,7 @@
 
         </div>
 
-        @include('history.admin.latest')
+        @include('history::admin.latest')
 
     </div>
 

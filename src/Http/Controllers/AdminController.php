@@ -1,9 +1,9 @@
 <?php
-namespace TypiCMS\Modules\Dashboard\Controllers;
+namespace TypiCMS\Modules\Dashboard\Http\Controllers;
 
 use View;
 use TypiCMS\Modules\Dashboard\Repositories\DashboardInterface;
-use TypiCMS\Controllers\AdminSimpleController;
+use TypiCMS\Http\Controllers\AdminSimpleController;
 
 class AdminController extends AdminSimpleController
 {

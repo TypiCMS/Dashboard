@@ -2,7 +2,6 @@
 namespace TypiCMS\Modules\Dashboard\Http\Controllers;
 
 use View;
-use TypiCMS\Modules\Dashboard\Http\Requests\FormRequest;
 use TypiCMS\Modules\Dashboard\Repositories\DashboardInterface;
 use TypiCMS\Http\Controllers\AdminSimpleController;
 

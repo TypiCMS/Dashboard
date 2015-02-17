@@ -14,7 +14,7 @@ class CacheDecorator extends CacheAbstractDecorator implements DashboardInterfac
         $this->cache = $cache;
     }
 
-    public function getWelcomeMessage()
+    public function welcomeMessage()
     {
         // Build the cache key, unique per model slug
         $cacheKey = md5(App::getLocale().'WelcomeMessage');
@@ -23,7 +23,7 @@ class CacheDecorator extends CacheAbstractDecorator implements DashboardInterfac
             return $this->cache->get($cacheKey);
         }
 
-        $message = $this->repo->getWelcomeMessage();
+        $message = $this->repo->welcomeMessage();
 
         // Store in cache for next request
         $this->cache->put($cacheKey, $message);

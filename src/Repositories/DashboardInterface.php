@@ -11,5 +11,5 @@ interface DashboardInterface extends RepositoryInterface
      *
      * @return string formatted as html
      */
-    public function getWelcomeMessage();
+    public function welcomeMessage();
 }

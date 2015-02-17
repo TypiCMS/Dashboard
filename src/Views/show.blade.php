@@ -15,7 +15,7 @@
             </div>
 
             <div class="panel-body">
-                {{ $welcomeMessage }}
+                {!! $welcomeMessage !!}
             </div>
 
         </div>

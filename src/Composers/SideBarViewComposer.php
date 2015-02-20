@@ -1,18 +1,27 @@
 <?php
 namespace TypiCMS\Modules\Dashboard\Composers;
 
-use Illuminate\View\View;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Sidebar\SidebarGroup;
+use Maatwebsite\Sidebar\SidebarItem;
+use TypiCMS\Composers\BaseSidebarViewComposer;
 
-class SidebarViewComposer
+class SidebarViewComposer extends BaseSidebarViewComposer
 {
     public function compose(View $view)
     {
-        $view->menus[0]->put('dashboard', [
-            'weight' => config('typicms.dashboard.sidebar.weight'),
-            'request' => $view->prefix,
-            'route' => 'dashboard',
-            'icon-class' => 'icon fa fa-fw fa-dashboard',
-            'title' => 'Dashboard',
-        ]);
+        $view->sidebar->group('dashboard', function (SidebarGroup $group) {
+            $group->id = 'dashboard';
+            $group->weight = 10;
+            $group->hideHeading();
+            $group->addItem(trans('dashboard::global.name'), function (SidebarItem $item) {
+                $item->icon = config('typicms.dashboard.sidebar.icon', 'icon fa fa-fw fa-dashboard');
+                $item->weight = config('typicms.dashboard.sidebar.weight');
+                $item->route('dashboard');
+                $item->authorize(
+                    $this->auth->hasAccess('dashboard.index')
+                );
+            });
+        });
     }
 }

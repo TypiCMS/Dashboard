@@ -11,7 +11,6 @@ class AdminController extends AdminSimpleController
     public function __construct(DashboardInterface $dashboard)
     {
         parent::__construct($dashboard);
-        $this->title['parent'] = trans('dashboard::global.Dashboard');
     }
 
     /**

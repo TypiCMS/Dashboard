@@ -15,9 +15,12 @@ class ModuleProvider extends ServiceProvider
 
     public function boot()
     {
-        // Add dirs
-        View::addNamespace('dashboard', __DIR__ . '/../views/');
-        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'dashboard');
+
+        $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'dashboard');
+        $this->publishes([
+            __DIR__ . '/../views' => base_path('resources/views/vendor/dashboard'),
+        ], 'views');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'dashboard');
         $this->mergeConfigFrom(
             __DIR__ . '/../config/config.php', 'typicms.dashboard'
         );

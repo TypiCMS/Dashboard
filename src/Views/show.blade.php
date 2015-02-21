@@ -1,5 +1,7 @@
 @extends('core::admin.master')
 
+@section('title', trans('dashboard::global.name'))
+
 @section('h1') @stop
 
 @section('main')

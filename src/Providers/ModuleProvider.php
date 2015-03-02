@@ -27,9 +27,6 @@ class ModuleProvider extends ServiceProvider
             __DIR__ . '/../resources/views' => base_path('resources/views/vendor/dashboard'),
         ], 'views');
         $this->publishes([
-            __DIR__ . '/../database' => base_path('database'),
-        ], 'migrations');
-        $this->publishes([
             __DIR__ . '/../../tests' => base_path('tests'),
         ], 'tests');
     }

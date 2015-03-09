@@ -44,7 +44,7 @@ class ModuleProvider extends ServiceProvider
         /**
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Dashboard\Composers\SideBarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Dashboard\Composers\SidebarViewComposer');
 
         $app->bind('TypiCMS\Modules\Dashboard\Repositories\DashboardInterface', function (Application $app) {
             $repository = new EloquentDashboard();

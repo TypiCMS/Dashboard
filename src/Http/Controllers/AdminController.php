@@ -18,9 +18,19 @@ class AdminController extends BaseAdminController
      *
      * @return void
      */
-    public function index()
+    public function dashboard()
     {
         return view('dashboard::show')
             ->with('welcomeMessage', $this->repository->welcomeMessage());
+    }
+
+    /**
+     * Redirect to dashboard
+     *
+     * @return void
+     */
+    public function index()
+    {
+        return redirect(route('dashboard'));
     }
 }

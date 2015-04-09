@@ -40,10 +40,8 @@ class RouteServiceProvider extends ServiceProvider {
             /**
              * Admin routes
              */
-            $router->get('admin/dashboard', array( 'as' => 'dashboard', 'uses' => 'AdminController@index'));
-            $router->get('admin', function(){
-                return redirect(route('dashboard'));
-            });
+            $router->get('admin/dashboard', array( 'as' => 'dashboard', 'uses' => 'AdminController@dashboard'));
+            $router->get('admin', 'AdminController@index');
         });
     }
 

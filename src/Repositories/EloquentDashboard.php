@@ -1,7 +1,6 @@
 <?php
 namespace TypiCMS\Modules\Dashboard\Repositories;
 
-use GuzzleHttp\Client;
 use TypiCMS\Repositories\RepositoriesAbstract;
 
 class EloquentDashboard extends RepositoriesAbstract implements DashboardInterface
@@ -9,10 +8,14 @@ class EloquentDashboard extends RepositoriesAbstract implements DashboardInterfa
 
     public function welcomeMessage()
     {
+
         if ($welcomeMessageUrl = config('typicms.welcome_message_url')) {
-            $response = with(new Client)->get($welcomeMessageUrl);
-            if ($response->getStatusCode() < 400) {
-                return $response->getBody();
+            $ch = curl_init($welcomeMessageUrl);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+            $welcomeMessage = curl_exec($ch);
+            if (curl_getinfo($ch, CURLINFO_HTTP_CODE) < 400) {
+                curl_close($ch);
+                return $welcomeMessage;
             }
         }
 

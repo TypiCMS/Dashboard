@@ -1,7 +1,6 @@
 <?php
 namespace TypiCMS\Modules\Dashboard\Repositories;
 
-use App;
 use TypiCMS\Modules\Core\Repositories\CacheAbstractDecorator;
 use TypiCMS\Modules\Core\Services\Cache\CacheInterface;
 
@@ -17,7 +16,7 @@ class CacheDecorator extends CacheAbstractDecorator implements DashboardInterfac
     public function welcomeMessage()
     {
         // Build the cache key, unique per model slug
-        $cacheKey = md5(App::getLocale().'WelcomeMessage');
+        $cacheKey = md5(config('app.locale').'WelcomeMessage');
 
         if ($this->cache->has($cacheKey)) {
             return $this->cache->get($cacheKey);

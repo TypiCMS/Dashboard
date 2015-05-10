@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use Lang;
 use TypiCMS\Modules\Dashboard\Repositories\CacheDecorator;
 use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
-use TypiCMS\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Core\Services\Cache\LaravelCache;
 use View;
 
 class ModuleProvider extends ServiceProvider

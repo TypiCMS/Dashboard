@@ -1,7 +1,7 @@
 <?php
 namespace TypiCMS\Modules\Dashboard\Repositories;
 
-use TypiCMS\Repositories\RepositoryInterface;
+use TypiCMS\Modules\Core\Repositories\RepositoryInterface;
 
 interface DashboardInterface extends RepositoryInterface
 {

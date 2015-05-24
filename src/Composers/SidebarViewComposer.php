@@ -19,7 +19,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
                 $item->weight = config('typicms.dashboard.sidebar.weight');
                 $item->route('dashboard');
                 $item->authorize(
-                    $this->auth->hasAccess('dashboard')
+                    $this->user->hasAccess('dashboard')
                 );
             });
         });

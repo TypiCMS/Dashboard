@@ -1,4 +1,5 @@
 <?php
+
 namespace TypiCMS\Modules\Dashboard\Repositories;
 
 use TypiCMS\Modules\Core\Repositories\CacheAbstractDecorator;
@@ -6,7 +7,6 @@ use TypiCMS\Modules\Core\Services\Cache\CacheInterface;
 
 class CacheDecorator extends CacheAbstractDecorator implements DashboardInterface
 {
-
     public function __construct(DashboardInterface $repo, CacheInterface $cache)
     {
         $this->repo = $repo;

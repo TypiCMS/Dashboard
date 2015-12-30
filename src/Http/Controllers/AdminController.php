@@ -15,7 +15,7 @@ class AdminController extends BaseAdminController
     /**
      * Admin home.
      *
-     * @return void
+     * @return \Illuminate\View\View
      */
     public function dashboard()
     {
@@ -26,7 +26,7 @@ class AdminController extends BaseAdminController
     /**
      * Redirect to dashboard.
      *
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {

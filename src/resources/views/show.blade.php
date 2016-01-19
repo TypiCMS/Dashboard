@@ -2,7 +2,7 @@
 
 @section('title', trans('dashboard::global.name'))
 
-@section('h1') @stop
+@section('h1') @endsection
 
 @section('main')
 
@@ -28,4 +28,4 @@
 
 </div>
 
-@stop
+@endsection

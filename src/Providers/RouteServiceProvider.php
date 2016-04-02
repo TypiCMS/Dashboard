@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
             /*
              * Admin routes
              */
-            $router->get('admin/dashboard', ['as' => 'dashboard', 'uses' => 'AdminController@dashboard']);
+            $router->get('admin/dashboard', 'AdminController@dashboard')->name('dashboard');
             $router->get('admin', 'AdminController@index');
         });
     }

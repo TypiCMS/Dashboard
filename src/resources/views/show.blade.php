@@ -13,7 +13,7 @@
         <div class="panel panel-default">
 
             <div class="panel-heading">
-                <h2 class="panel-title">@lang('dashboard::global.Welcome, :name!', array('name' => Auth::user()->first_name))</h2>
+                <h2 class="panel-title">@lang('dashboard::global.Welcome, :name!', array('name' => auth()->user()->first_name))</h2>
             </div>
 
             <div class="panel-body">

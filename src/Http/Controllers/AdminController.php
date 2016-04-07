@@ -10,6 +10,7 @@ class AdminController extends BaseAdminController
     public function __construct(DashboardInterface $dashboard)
     {
         parent::__construct($dashboard);
+        $this->middleware('admin', ['except' => 'index']);
     }
 
     /**

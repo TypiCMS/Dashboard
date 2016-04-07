@@ -20,7 +20,7 @@ class SidebarViewComposer
                 $item->weight = config('typicms.dashboard.sidebar.weight');
                 $item->route('dashboard');
                 $item->authorize(
-                    Gate::allows('index-dashboard')
+                    Gate::allows('dashboard')
                 );
             });
         });

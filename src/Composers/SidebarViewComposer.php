@@ -3,6 +3,7 @@
 namespace TypiCMS\Modules\Dashboard\Composers;
 
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Gate;
 use Maatwebsite\Sidebar\SidebarGroup;
 use Maatwebsite\Sidebar\SidebarItem;
 
@@ -19,7 +20,7 @@ class SidebarViewComposer
                 $item->weight = config('typicms.dashboard.sidebar.weight');
                 $item->route('dashboard');
                 $item->authorize(
-                    auth()->user()->can('index-dashboard')
+                    Gate::allows('index-dashboard')
                 );
             });
         });

@@ -14,6 +14,16 @@ class AdminController extends BaseAdminController
     }
 
     /**
+     * Redirect to dashboard.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function index()
+    {
+        return redirect(route('dashboard'));
+    }
+
+    /**
      * Admin home.
      *
      * @return \Illuminate\View\View
@@ -22,15 +32,5 @@ class AdminController extends BaseAdminController
     {
         return view('dashboard::show')
             ->with('welcomeMessage', $this->repository->welcomeMessage());
-    }
-
-    /**
-     * Redirect to dashboard.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function index()
-    {
-        return redirect(route('dashboard'));
     }
 }

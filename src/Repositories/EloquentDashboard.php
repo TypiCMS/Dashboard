@@ -2,9 +2,8 @@
 
 namespace TypiCMS\Modules\Dashboard\Repositories;
 
-use TypiCMS\Modules\Core\Repositories\RepositoriesAbstract;
 
-class EloquentDashboard extends RepositoriesAbstract implements DashboardInterface
+class EloquentDashboard extends EloquentRepository
 {
     public function welcomeMessage()
     {

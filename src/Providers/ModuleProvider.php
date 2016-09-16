@@ -4,8 +4,6 @@ namespace TypiCMS\Modules\Dashboard\Providers;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Dashboard\Repositories\CacheDecorator;
 use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
 
 class ModuleProvider extends ServiceProvider
@@ -38,14 +36,6 @@ class ModuleProvider extends ServiceProvider
          */
         $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Dashboard\Composers\SidebarViewComposer');
 
-        $app->bind('TypiCMS\Modules\Dashboard\Repositories\DashboardInterface', function (Application $app) {
-            $repository = new EloquentDashboard();
-            if (!config('typicms.cache')) {
-                return $repository;
-            }
-            $laravelCache = new LaravelCache($app['cache'], 'dashboard', 10);
-
-            return new CacheDecorator($repository, $laravelCache);
-        });
+        $app->bind('Dashboard', EloquentDashboard::class);
     }
 }

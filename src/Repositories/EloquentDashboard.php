@@ -2,6 +2,7 @@
 
 namespace TypiCMS\Modules\Dashboard\Repositories;
 
+use TypiCMS\Modules\Core\EloquentRepository;
 
 class EloquentDashboard extends EloquentRepository
 {

@@ -2,7 +2,6 @@
 
 namespace TypiCMS\Modules\Dashboard\Providers;
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
 

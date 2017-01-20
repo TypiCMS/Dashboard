@@ -15,7 +15,7 @@ class SidebarViewComposer
             $group->id = 'dashboard';
             $group->weight = 10;
             $group->hideHeading();
-            $group->addItem(trans('dashboard::global.name'), function (SidebarItem $item) {
+            $group->addItem(__('dashboard::global.name'), function (SidebarItem $item) {
                 $item->id = 'dashboard';
                 $item->icon = config('typicms.dashboard.sidebar.icon', 'icon fa fa-fw fa-dashboard');
                 $item->weight = config('typicms.dashboard.sidebar.weight');

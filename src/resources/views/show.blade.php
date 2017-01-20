@@ -1,6 +1,6 @@
 @extends('core::admin.master')
 
-@section('title', trans('dashboard::global.name'))
+@section('title', __('dashboard::global.name'))
 
 @section('h1') @endsection
 

@@ -4,7 +4,7 @@
 
 @section('h1') @endsection
 
-@section('main')
+@section('content')
 
 <div class="row">
 

@@ -3,6 +3,7 @@
 namespace TypiCMS\Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use TypiCMS\Modules\Dashboard\Composers\SidebarViewComposer;
 use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
 
 class ModuleProvider extends ServiceProvider
@@ -28,12 +29,12 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Dashboard\Providers\RouteServiceProvider');
+        $app->register(RouteServiceProvider::class);
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Dashboard\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', SidebarViewComposer::class);
 
         $app->bind('Dashboard', EloquentDashboard::class);
     }

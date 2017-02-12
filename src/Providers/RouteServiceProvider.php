@@ -31,7 +31,7 @@ class RouteServiceProvider extends ServiceProvider
              */
             $router->group(['middleware' => 'admin', 'prefix' => 'admin'], function (Router $router) {
                 $router->get('dashboard', 'AdminController@dashboard')->name('dashboard');
-                $router->get('admin', 'AdminController@index');
+                $router->get('', 'AdminController@index');
             });
         });
     }

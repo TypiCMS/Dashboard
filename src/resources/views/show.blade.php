@@ -22,7 +22,7 @@
 
         </div>
 
-        @can('index-history')
+        @can('see-history')
         @include('history::admin.latest')
         @endcan
 

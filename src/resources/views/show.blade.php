@@ -1,6 +1,6 @@
 @extends('core::admin.master')
 
-@section('title', __('dashboard::global.name'))
+@section('title', __('Dashboard'))
 
 @section('h1') @endsection
 
@@ -13,7 +13,7 @@
         <div class="panel panel-default">
 
             <div class="panel-heading">
-                <h2 class="panel-title">@lang('dashboard::global.Welcome, :name!', array('name' => auth()->user()->first_name))</h2>
+                <h2 class="panel-title">@lang('Welcome, :name!', array('name' => auth()->user()->first_name))</h2>
             </div>
 
             <div class="panel-body">
@@ -22,7 +22,7 @@
 
         </div>
 
-        @can('see-history')
+        @can ('see-history')
         @include('history::admin.latest')
         @endcan
 

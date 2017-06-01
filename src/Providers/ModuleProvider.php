@@ -15,7 +15,6 @@ class ModuleProvider extends ServiceProvider
         );
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/', 'dashboard');
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'dashboard');
 
         $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/dashboard'),

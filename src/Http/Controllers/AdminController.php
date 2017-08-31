@@ -3,14 +3,13 @@
 namespace TypiCMS\Modules\Dashboard\Http\Controllers;
 
 use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Dashboard\Repositories\DashboardInterface;
+use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
 
 class AdminController extends BaseAdminController
 {
-    public function __construct(DashboardInterface $dashboard)
+    public function __construct(EloquentDashboard $dashboard)
     {
         parent::__construct($dashboard);
-        $this->middleware('admin', ['except' => 'index']);
     }
 
     /**

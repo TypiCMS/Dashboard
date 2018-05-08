@@ -10,14 +10,16 @@
 
     <div class="col-sm-12">
 
-        <div class="panel panel-default">
+        <div class="card mb-4">
 
-            <div class="panel-heading">
-                <h2 class="panel-title">@lang('Welcome, :name!', array('name' => auth()->user()->first_name))</h2>
-            </div>
+            <div class="card-body">
 
-            <div class="panel-body">
-                {!! $welcomeMessage !!}
+                <h2 class="card-title">@lang('Welcome, :name!', array('name' => auth()->user()->first_name))</h2>
+
+                <div class="card-text">
+                    {!! $welcomeMessage !!}
+                </div>
+
             </div>
 
         </div>

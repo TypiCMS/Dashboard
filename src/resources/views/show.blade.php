@@ -24,8 +24,8 @@
 
         </div>
 
-        @can ('see-history')
-        @include('history::admin.latest')
+        @can('see-history')
+        <history @can('clear-history'):clear-button="true"@endcan></history>
         @endcan
 
     </div>

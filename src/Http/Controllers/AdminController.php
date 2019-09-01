@@ -3,15 +3,9 @@
 namespace TypiCMS\Modules\Dashboard\Http\Controllers;
 
 use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Dashboard\Repositories\EloquentDashboard;
 
 class AdminController extends BaseAdminController
 {
-    public function __construct(EloquentDashboard $dashboard)
-    {
-        parent::__construct($dashboard);
-    }
-
     /**
      * Redirect to dashboard.
      *
@@ -30,6 +24,6 @@ class AdminController extends BaseAdminController
     public function dashboard()
     {
         return view('dashboard::show')
-            ->with('welcomeMessage', $this->repository->welcomeMessage());
+            ->with('welcomeMessage', $this->model->welcomeMessage());
     }
 }

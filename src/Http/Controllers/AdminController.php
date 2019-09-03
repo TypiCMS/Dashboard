@@ -19,6 +19,7 @@ class AdminController extends BaseAdminController
     {
         $welcomeMessage = config('typicms.welcome_message');
         $url = config('typicms.welcome_message_url');
+
         try {
             $response = $client->get($url);
             if ($response->getStatusCode() < 400) {

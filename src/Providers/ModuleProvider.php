@@ -9,9 +9,7 @@ class ModuleProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/config.php', 'typicms.dashboard'
-        );
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'typicms.dashboard');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/', 'dashboard');
 

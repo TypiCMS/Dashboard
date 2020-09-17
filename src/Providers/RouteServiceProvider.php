@@ -5,18 +5,10 @@ namespace TypiCMS\Modules\Dashboard\Providers;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
+use TypiCMS\Modules\Dashboard\Http\Controllers\AdminController;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * This namespace is applied to the controller routes in your routes file.
-     *
-     * In addition, it is set as the URL generator's root namespace.
-     *
-     * @var string
-     */
-    protected $namespace = 'TypiCMS\Modules\Dashboard\Http\Controllers';
-
     /**
      * Define the routes for the application.
      */
@@ -27,8 +19,8 @@ class RouteServiceProvider extends ServiceProvider
              * Admin routes
              */
             $router->middleware('admin')->prefix('admin')->group(function (Router $router) {
-                $router->get('dashboard', 'AdminController@dashboard')->name('dashboard')->middleware('can:see dashboard');
-                $router->get('', 'AdminController@index')->middleware('can:see dashboard');
+                $router->get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('can:see dashboard');
+                $router->get('', [AdminController::class, 'index'])->middleware('can:see dashboard');
             });
         });
     }

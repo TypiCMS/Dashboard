@@ -11,7 +11,7 @@ class SidebarViewComposer
 {
     public function compose(View $view)
     {
-        if (Gate::denies('see-dashboard')) {
+        if (Gate::denies('see dashboard')) {
             return;
         }
         $view->sidebar->group('dashboard', function (SidebarGroup $group) {

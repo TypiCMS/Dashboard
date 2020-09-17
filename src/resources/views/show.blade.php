@@ -24,13 +24,13 @@
 
         </div>
 
-        @can('see-history')
+        @can('see history')
         <history
             fields="history.id,history.created_at,history.title,history.locale,history.icon_class,history.historable_id,history.historable_type,history.action,history.user_id"
             include="historable"
             :searchable="['title,historable_type,action,user_name']"
             :sorting="['-created_at']"
-            @can('clear-history'):clear-button="true"@endcan
+            @can('clear history'):clear-button="true"@endcan
             >
 
             <template slot="columns" slot-scope="{ sortArray }">

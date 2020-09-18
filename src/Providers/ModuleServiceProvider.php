@@ -5,7 +5,7 @@ namespace TypiCMS\Modules\Dashboard\Providers;
 use Illuminate\Support\ServiceProvider;
 use TypiCMS\Modules\Dashboard\Composers\SidebarViewComposer;
 
-class ModuleProvider extends ServiceProvider
+class ModuleServiceProvider extends ServiceProvider
 {
     public function boot()
     {

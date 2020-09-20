@@ -14,14 +14,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        Route::namespace($this->namespace)->group(function (Router $router) {
-            /*
-             * Admin routes
-             */
-            $router->middleware('admin')->prefix('admin')->group(function (Router $router) {
-                $router->get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('can:see dashboard');
-                $router->get('', [AdminController::class, 'index'])->middleware('can:see dashboard');
-            });
+        /*
+         * Admin routes
+         */
+        Route::middleware('admin')->prefix('admin')->group(function (Router $router) {
+            $router->get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('can:see dashboard');
+            $router->get('', [AdminController::class, 'index'])->middleware('can:see dashboard');
         });
     }
 }

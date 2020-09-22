@@ -26,7 +26,7 @@
 
         @can('see history')
         <history
-            fields="history.id,history.created_at,history.title,history.locale,history.icon_class,history.historable_id,history.historable_type,history.action,history.user_id"
+            fields="history.id,history.created_at,history.title,history.locale,history.historable_id,history.historable_type,history.action,history.user_id"
             include="historable"
             :searchable="['title,historable_type,action,user_name']"
             :sorting="['-created_at']"

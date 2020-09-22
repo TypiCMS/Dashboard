@@ -20,7 +20,7 @@ class SidebarViewComposer
             $group->hideHeading();
             $group->addItem(__('Dashboard'), function (SidebarItem $item) {
                 $item->id = 'dashboard';
-                $item->icon = config('typicms.dashboard.sidebar.icon', 'icon fa fa-fw fa-dashboard');
+                $item->icon = config('typicms.dashboard.sidebar.icon');
                 $item->weight = config('typicms.dashboard.sidebar.weight');
                 $item->route('dashboard');
             });

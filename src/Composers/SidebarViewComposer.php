@@ -22,7 +22,7 @@ class SidebarViewComposer
                 $item->id = 'dashboard';
                 $item->icon = config('typicms.dashboard.sidebar.icon');
                 $item->weight = config('typicms.dashboard.sidebar.weight');
-                $item->route('dashboard');
+                $item->route('admin::dashboard');
             });
         });
     }

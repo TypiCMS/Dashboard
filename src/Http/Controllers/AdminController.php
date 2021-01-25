@@ -12,7 +12,7 @@ class AdminController extends BaseAdminController
 {
     public function index(): RedirectResponse
     {
-        return redirect(route('dashboard'));
+        return redirect(route('admin::dashboard'));
     }
 
     public function dashboard(Client $client): View

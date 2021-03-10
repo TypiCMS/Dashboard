@@ -11,10 +11,10 @@ class ModuleServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'typicms.dashboard');
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views/', 'dashboard');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views/', 'dashboard');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/dashboard'),
+            __DIR__.'/../../resources/views' => resource_path('views/vendor/dashboard'),
         ], 'views');
 
         /*

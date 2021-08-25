@@ -14,7 +14,7 @@
 
             <div class="card-body">
 
-                <h2 class="card-title">@lang('Welcome, :name!', ['name' => auth()->user()->first_name])</h2>
+                <h2 class="card-title">@lang('Welcome, :name!', ['name' => e(auth()->user()->first_name)])</h2>
 
                 <div class="card-text">
                     {!! $welcomeMessage !!}

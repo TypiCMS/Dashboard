@@ -31,7 +31,5 @@ class ModuleServiceProvider extends ServiceProvider
          * Register route service provider
          */
         $app->register(RouteServiceProvider::class);
-
-        $app->bind('Dashboard', Dashboard::class);
     }
 }
